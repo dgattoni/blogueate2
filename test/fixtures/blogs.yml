@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  siteTitle: MyString
+  siteDescription: MyString
+  siteHeader: MyString
+  user_id: 1
+
+two:
+  siteTitle: MyString
+  siteDescription: MyString
+  siteHeader: MyString
+  user_id: 1

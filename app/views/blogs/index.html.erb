@@ -1,0 +1,56 @@
+ 
+
+<h1 class="text-center">Hola, <% if user_signed_in? %> 
+<strong><%= current_user.username %>! </strong>
+<% end  %>
+Estos son los últimos SuperBloggers en <strong>blogueate!</strong>
+  
+ </h1>
+
+ <div class="row">
+   
+   <div class="col-md-6 text-right">   
+      <%= image_tag("1423809271_Captain_America.png", class:'text-center ') %>
+    </div>
+
+     <div class="col-md-6 ">
+     <p style="margin-top:30px;"> 
+
+<% if user_signed_in? %>
+
+<%= link_to 'Crear Mi SuperBlog!', new_blog_path, class: 'btn btn-lg btn-success' %>
+
+<% else  %>
+
+<%= link_to "Se un SuperBlogger!", new_user_registration_path, class: 'btn btn-lg btn-danger text-center' %> 
+
+<% end %>
+
+</p>
+
+   </div>
+
+
+ </div>
+
+ 
+  <div class="row">
+<!-- http://placehold.it/350x150 -->
+
+         <% @blogs.each do |blog| %>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= blog.siteHeader %>" alt="<%= blog.siteTitle %>" style="height:200px;"   >
+                  <div class="caption">
+                    <h3><%= blog.siteTitle %></h3>
+                      <p><%= blog.user.username %></p>
+                    <p>
+                      <%= link_to 'Leer!', blog, class:"btn btn-info" %>
+                    <a href="#" class="btn btn-primary" role="button">compartir!</a>  </p>
+                  </div>
+                </div>
+              </div>
+             
+        <% end %>
+
+    </div> 

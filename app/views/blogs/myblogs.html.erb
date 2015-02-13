@@ -1,0 +1,72 @@
+
+<% if user_signed_in? && !@blogs.blank? %>
+
+    <%= link_to 'Nuevo Blog', new_blog_path, class:'btn btn-success' %>
+
+<% end %>
+
+<% if user_signed_in? %>
+  <h1><strong><%= current_user.username %></strong>, estos son tus Blogs. </h1>
+<% end  %>
+<br>
+
+<p id="notice"><%= notice %></p>
+
+   
+
+   <!-- iteramos los pins del usuario ACTUAL.
+   se comunica con el metodo mypins del controller pins_controller.rb -->
+
+  <% if @blogs.blank?  %>
+
+      <h3>       
+          <%= image_tag("frank.png", class:'img-responsive pull-left') %>
+ups no tienes blogs creados!</h3>
+      <%= link_to 'Crear Mi SuperBlog!', new_blog_path, class: 'btn btn-lg btn-success' %>
+
+
+<% else  %>
+    <% @blogs.each do |blog| %>
+
+
+
+      <div class="col-md-4">
+
+          <div class="thumbnail">
+
+                   
+                <img src="<%= blog.siteHeader %>" alt="<%= blog.siteTitle %>" style="height:200px;"   >
+
+
+              <div class="caption">
+              <h3><%= blog.siteTitle %></h3>
+                <p><%= blog.user.username %></p>
+                 <p>creado el <%= blog.created_at %></p>
+               
+                  <%= link_to 'visitar mi blog', blog, class: 'btn btn-default btn-xs' %> 
+
+                 <%= link_to 'Editar', edit_blog_path(blog), class: 'btn btn-info btn-xs' %>
+
+                 <%= link_to 'Borrar', blog, method: :delete, data: { confirm: 'estas seguro?' }, class: 'btn btn-danger btn-xs' %> 
+              </div>
+
+
+
+            
+           
+           </div><!-- //cierra thumbnail-->
+
+        </div>  <!-- //cierra col-md-3-->
+ 
+
+    <% end %>
+
+
+    <% end   %>
+ 
+<br>
+
+
+
+ 
+

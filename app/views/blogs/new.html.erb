@@ -1,0 +1,10 @@
+<h1>Hola <%= current_user.username %></h1>
+
+<h3>Genial! decidíste crear un SuperBlog!</h3>
+
+<br>
+
+<%= render 'form' %>
+
+<br>
+<%= link_to 'Back', blogs_path, class:"btn btn-default" %>

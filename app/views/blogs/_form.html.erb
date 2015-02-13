@@ -1,0 +1,49 @@
+ 
+
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+       <h2><%= pluralize(@blog.errors.count, "error") %> campos son requeridos:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+ 
+
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :siteTitle, "¿Que nombre le pondrás a tu SuperBlog?" %><br>
+    <%= f.text_field :siteTitle, class:'form-control' %>
+  </div>
+  </div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :siteDescription, "una Frase cool para tu SuperBlog:" %><br>
+    <%= f.text_field :siteDescription, class:'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :siteHeader, "Tu Background favorito aquí:" %><br>
+    <%= f.text_field :siteHeader, class:'form-control' %>
+  </div>
+  </div>
+
+   <br>
+   <div class="form-group">
+  <div class="actions">
+    <%= f.submit class:"btn btn-success" %>
+  </div>
+  </div>
+
+<% end %>

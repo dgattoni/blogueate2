@@ -1,0 +1,16 @@
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background:url(<%= @blog.siteHeader %>) repeat;">
+      <div class="container">
+        <h1><%=  @blog.siteTitle %>
+       
+
+        </h1>
+     <br>
+        <p class="siteDescription"> <%=  @blog.siteDescription %></p>
+        <p>
+
+ 
+        <a class="btn btn-primary btn-lg" href="<%=  contactme_path %>" > <%= @blog.user.username %>&raquo;</a></p>
+      </div>
+    </div>
+

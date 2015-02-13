@@ -1,0 +1,87 @@
+ 
+ 
+
+
+ <!-- AQUI MUESTRO LOS POSTS DEL USUARIO ACTUAL -->
+<!-- RECURSO ANIDADO ENTRE BLOG Y POSTS -->
+
+<!--   blog > show  -->
+ 
+ <div class="container">
+<div class="row">
+	
+ 
+
+		<div class="col-md-5">
+			
+				
+		<%= form_for([@blog, @post]) do |f| %>
+		 
+
+			<div class="form-group">
+				<div class="field">
+					<%= f.label :entryTitle,"Escribe un Super Título:" %><br>
+					<%= f.text_field :entryTitle, class: 'form-control' %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="field">
+				 
+ 
+     			<%= f.text_area :entryContent, :cols => "10", :rows => "10", class: 'form-control' %>
+
+			 
+				</div>
+			</div>
+		   
+		  <div class="actions">
+		    <%= f.submit class: "btn btn-success" %>
+		  </div>
+		<% end %>
+
+
+
+		</div><!-- .col-md-5 -->
+ 
+<div class="col-md-7">
+	 
+	<% if @posts.blank?  %>
+
+				<h2><%= @post.blog.user.username %> no se siente inspirada aún para escribir artículos...OK?</h2>
+
+		       <%= image_tag("hum3.gif", class:'img-responsive') %>
+
+ 
+  	<% else  %>
+<h3>últimos artículos:</h3>
+  	 <% @posts.each do |post| %>
+      <div class="col-md-12 well">
+         <h3><%= post.entryTitle %> <br>
+          <span class="small">Escrito por: <%= post.blog.user.username %></span><br>
+          <span class="small">fecha de creación: <%= post.created_at %></span></h3>
+          <p><%= truncate(post.entryContent,  length: 380) %></p>      
+                      
+                <!--  <p>  post.blog.id </p> -->
+                 
+         </div>
+ 
+
+  	<% end %>
+
+
+
+  	<% end   %>
+
+</div><!-- .col-md-7 -->
+
+</div><!-- .row -->
+
+
+</div>
+
+
+
+
+ 
+ 
