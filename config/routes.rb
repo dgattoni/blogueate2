@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  resources :categories
+
   get 'pages/equipo'
 
   get 'pages/contacto'
+
+  get 'pages/services'
+
 
   devise_for :users
   get 'comments/create'
@@ -12,16 +17,15 @@ Rails.application.routes.draw do
 
   get 'myblogs' => 'blogs#myblogs'
  
- get 'blogs/:id/contactme' => 'blogs#contactme', as: :contactme
-
+  get 'blogs/:id/contactme' => 'blogs#contactme', as: :contactme
  
-
+   
   #resources :posts
 
   #resources :blogs
 
   resources :blogs do
-    resources :posts, only: [:new, :create, :update, :destroy]
+    resources :posts, only: [:new, :show, :create, :update, :destroy]
   end
 
 

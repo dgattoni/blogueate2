@@ -16,3 +16,8 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2015-02-13 08:54:30 CLST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was shut down at 2015-02-13 13:31:22 CLST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1

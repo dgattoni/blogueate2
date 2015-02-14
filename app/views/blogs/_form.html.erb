@@ -17,11 +17,6 @@
 
 
 
-
-
- 
-
-
 <div class="form-group">
   <div class="field">
     <%= f.label :siteTitle, "¿Que nombre le pondrás a tu SuperBlog?" %><br>
@@ -42,6 +37,14 @@
     <%= f.text_field :siteHeader, class:'form-control' %>
   </div>
   </div>
+ 
+ <div class="form-group">
+  <div class="field">
+    <%= f.label :category_id, "Categoria a la que pertenece:" %><br>
+    <%= collection_select(:blog, :category_id, @categories, :id, :category_name, prompt: true, class: 'form-control') %>
+   </div>
+  </div>
+
 
    <br>
    <div class="form-group">

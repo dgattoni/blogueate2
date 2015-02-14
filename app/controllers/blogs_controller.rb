@@ -21,16 +21,16 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.sorted
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show     
-    #@post = Post.new
-      #carga de vars antes del render
-   #@blog_id = params[:id]
-   #@blog =Blog.find(@blog_id)
+  #@post = Post.new
+  #carga de vars antes del render
+  #@blog_id = params[:id]
+  #@blog =Blog.find(@blog_id)
   # @posts =@blog.posts
 
     #aqui cargamos un objeto post
@@ -38,8 +38,7 @@ class BlogsController < ApplicationController
     @posts = @blog.posts.sorted
 
     #@toys = Toy.sorted
- 
-      render layout: "bloglayout/blogindex"
+     render layout: "bloglayout/blogindex"
      
   end
 
@@ -47,10 +46,18 @@ class BlogsController < ApplicationController
   def new
     @blog = Blog.new
     @b = Blog.all
+
+     
+  @categories = Category.all
+
+
   end
 
   # GET /blogs/1/edit
   def edit
+    @blog = Blog.find(params[:id])
+    @categories = Category.all
+
   end
 
   # POST /blogs
@@ -63,7 +70,7 @@ class BlogsController < ApplicationController
  
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
@@ -80,7 +87,7 @@ class BlogsController < ApplicationController
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
-        format.html { render :edit }
+        # format.html { render :edit }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
@@ -99,11 +106,12 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+       @blog = Blog.find(params[:id])
+       
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:siteTitle, :siteDescription, :siteHeader, :user_id)
+      params.require(:blog).permit(:siteTitle, :siteDescription, :siteHeader, :user_id, :category_id)
     end
 end
