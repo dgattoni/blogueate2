@@ -31674,3 +31674,127 @@ Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.4ms)
 
 
 Started GET "/assets/hum3-cc54ff067a6abd9d35ef882285c7f2ea.gif" for ::1 at 2015-02-13 10:24:19 -0300
+
+
+Started GET "/" for ::1 at 2015-02-15 15:24:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mBlog Load (1.2ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered blogs/index.html.erb within layouts/application (223.5ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 3136ms (Views: 3032.0ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/blogs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/blog-55b3b93e5261559abd7038459ca29f67.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/bootswatch-54bb41b84d2310dfe7b77749ee3151d0.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/application-3d1b9e8975a11630a1d287672c25810c.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/pages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/blogs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/pages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/application-065959174ad48d43202782cc4ff66fc6.js?body=1" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/1423809271_Captain_America-262d460737a9c6d671005c99b6d6e48b.png" for ::1 at 2015-02-15 15:24:11 -0300
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-15 15:24:12 -0300
+
+
+Started GET "/" for ::1 at 2015-02-15 15:25:07 -0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBlog Load (0.4ms)[0m  SELECT "blogs".* FROM "blogs"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered blogs/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 153ms (Views: 150.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/blog-55b3b93e5261559abd7038459ca29f67.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/blogs-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/bootswatch-54bb41b84d2310dfe7b77749ee3151d0.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/pages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/application-3d1b9e8975a11630a1d287672c25810c.css?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/blogs-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/application-065959174ad48d43202782cc4ff66fc6.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/pages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-15 15:25:07 -0300
+
+
+Started GET "/assets/1423809271_Captain_America-262d460737a9c6d671005c99b6d6e48b.png" for ::1 at 2015-02-15 15:25:08 -0300
