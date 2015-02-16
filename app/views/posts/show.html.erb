@@ -1,29 +1,119 @@
 <!--   CONTROLLER POST >  POST > VIEW SHOW  -->
 
 <div class="row">
+
+<div class="col-md-12">
+	
+	<ol class="breadcrumb">
+	<li>Estás en: </li>
+	  <li><a href="<%= myblogs_path %>">Mis Blogs</a></li>
+	  <li><a href="<%= blog_post_path %>"><%= @blog.siteTitle %></a></li>
+	  <li class="active"><%= @post.entryTitle %></li>
+	</ol>
+
+</div>
+
+ 
+
+<div class="col-md-12">
+ <p class="text-right">  <%= tweet_button(:via => "danigattoni_", :text => "Check this out! #blogueate", :count =>'vertical') %></p>
+
+</div>
+ 
+
 <div class="col-md-6 col-md-offset-3">
+
+<p class="text-center">
+	 <%= image_tag("danigatt.jpeg", class:'img-circle img-thumbnail text-center img-responsive', width: '100px', height:'100px') %> 
+
+</p>
 
 	<h1 class="text-center">
 		<strong><%= @post.entryTitle %></strong>
 	</h1>
 
-	<p class="lead text-center"> Escrito por <%= @post.blog.user.username %></p>
+	<blockquote class="blockquote-reverse">
 
+		<p><%= truncate(@post.entryContent, length: 140) %></p>
+
+		<footer>escrito por <cite title="Source Title"><%= @post.blog.user.username %>, <%= time_ago_in_words(@post.created_at) %></cite></footer>
+
+	</blockquote>
+
+
+ 
 	<div class="postContent">
 		<%= @post.entryContent %>
 
-			
-	</div>
+	 <br>
+	 <br>
+	 
 
+		 
+
+   </div>
+
+	 
+</div>
+<!-- estas en post > show.html.erb -->
+
+<div class="clearfix"></div>
+
+
+<div class="col-md-6 col-md-offset-3">
+<%= form_for([@blog, @post, @comment]) do |f| %>	  
+
+<div class="form-group">
+<div class="field">
+	 <%= f.label :comment, "Deja un comentario:" %><br>
+	 <%= f.text_area :comment, :cols => "10", :rows => "3", class: 'form-control' %>
+</div>
+</div>	   
+<div class="actions">
+ 
+
+<%= f.submit :value => "enviar", class: "btn btn-success pull-right"  %><br><br>
+</div>
+<% end %> 
+
+</div><!-- col md 6--> 
+
+
+<div class="clearfix"></div>
+
+
+<div class="col-md-6 col-md-offset-3">
+ <h4 class="text-center">Este Artículo 
+<% if @count_comments == 0 %>
+no tiene
+<% else  %>
+ tiene <%= @count_comments %> 
+ <% end  %>comentarios.
+ </h4>
+
+
+<!-- 
+id: 15,
+comment: "erwer",
+post_id: 51,
+user_id: 5,
+created_at: Mon, 16 Feb 2015 01:32:53 UTC +00:00,
+-->
+
+	<% @comments.each do |c| %>
+ 			<div class="col-md-12" style="border-bottom:1px dashed #cdcdcd; padding-top:20px;">
+ 			<blockquote>
+ 			<span class="small"><strong> <%=  c.user.username %></strong>
+ 			<br><span class="text-info "><%=  time_ago_in_words(c.created_at) %></span>				
+ 			</span> 
+			<span class="small"> <%= truncate(c.comment, length: 140) %></span>
+			</blockquote>			 
+			</div>
+	<% end %>
 
 </div>
+ 
 
-
-<div class="col-md-6 col-md-offset-3 text-center">
-	<h4>Tienes comentarios que compartir?</h4>
-
-	<a href="#" class="btn btn-info btn-large">Escribe tu respuesta</a>
-</div>
 
 
 </div>

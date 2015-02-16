@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blogueate</title> 
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	
+	<%= csrf_meta_tags %>
+	
+</head>
+<body>
+	
+	<%= render 'layouts/bloglayout/navbar' %>
+	
+	
+	<div class="row" style="margin-top:50px; min-height:691px; background:url(<%= @blog.siteHeader %>) repeat;">
+		
+
+		<div class="col-md-12">
+			
+			<%= render 'layouts/bloglayout/userinfo' %>
+
+			<%= render 'layouts/bloglayout/social' %>
+
+
+
+		</div>
+
+
+	</div><!-- row-->
+
+	
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

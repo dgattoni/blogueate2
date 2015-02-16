@@ -24,9 +24,25 @@ Rails.application.routes.draw do
 
   #resources :blogs
 
-  resources :blogs do
-    resources :posts, only: [:new, :show, :create, :update, :destroy]
+
+
+
+  #resources :blogs do
+    
+  #  resources :posts, only: [:new, :show, :create, :update, :destroy]  
+        
+  #end
+ 
+ 
+  resources :blogs, :path => ''
+
+    resources :blogs do
+       resources :posts do
+          resources :comments
+      end  
   end
+
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

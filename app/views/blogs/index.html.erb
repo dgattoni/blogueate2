@@ -1,16 +1,23 @@
  
 
+ 
+</style>
+
 <h1 class="text-center">Hola, <% if user_signed_in? %> 
 <strong><%= current_user.username %>! </strong>
-<% end  %>
-Estos son los últimos SuperBloggers en <strong>blogueate!</strong>
-  
- </h1>
 
+
+
+<% end  %>
+Estos son los últimos SuperBloggers en <strong>blog<span class="text-primary glyphicon glyphicon-magnet small " aria-hidden="true"></span>eate</strong>
+  </h1>
+
+<div class="clearfix"></div>
+<hr class="small">
  <div class="row">
    
    <div class="col-md-6 text-right">   
-      <%= image_tag("1423809271_Captain_America.png", class:'text-center ') %>
+      <%= image_tag("heroes2.gif", class:'text-center ') %>
     </div>
 
      <div class="col-md-6 ">
@@ -40,13 +47,14 @@ Estos son los últimos SuperBloggers en <strong>blogueate!</strong>
          <% @blogs.each do |blog| %>
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                  <img src="<%= blog.siteHeader %>" alt="<%= blog.siteTitle %>" style="height:200px;"   >
+                  <img src="<%= blog.siteHeader %>" alt="<%= blog.siteTitle %>" style="height:200px;" class="img-rounded "   >
                   <div class="caption">
                     <h3><%= blog.siteTitle %></h3>
                       <p><%= blog.user.username %></p>
+
+
                       <p><span class="label  label-<%= blog.category.category_name %>"><%= blog.category.category_name %></span> </p>
                     <p>
- 
                     
                       <%= link_to 'Leer!', blog, class:"btn btn-primary" %>
                     <a href="#" class="btn btn-primary" role="button">compartir!</a>  </p>

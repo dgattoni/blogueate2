@@ -1,0 +1,20 @@
+
+<div class="col-md-12 text-center">
+	<br>
+
+	<ul class="list-unstyled" style="color:white; text-shadow:0 1px 5px rgba(0, 0, 0, 0.3)">
+		<li>
+			 <%= image_tag("danigatt.jpeg", class:'img-circle img-thumbnail text-center img-responsive', width: '150px', height:'150px') %>
+
+
+		 </li>
+		<li>  <h3 class="text-uppercase"> <strong><%=  @blog.siteTitle  %> </strong><br></h3></li>
+			<li>   <strong> <%=  @blog.user.bio  %> </strong>  </li>
+					<li>  última conexión <%=  @blog.user.last_sign_in_at  %></li>	
+
+		<li><%= tweet_button(:via => "danigattoni_", :text => "#blogueate") %>
+
+		</li>
+	</ul>
+
+</div>

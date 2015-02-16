@@ -12,6 +12,18 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
+   @blog =Blog.find_by_slug(params[:blog_id])
+
+
+    #instancio un nuevo comment
+    @comment = Comment.new post: @post
+    
+
+    #recopilo todos los comments del post actual.
+    @comments = @post.comments.all
+
+    @count_comments = @post.comments.count
   end
 
   # GET /posts/new
@@ -29,9 +41,9 @@ class PostsController < ApplicationController
   # <%= @blog.id %>
   def create
 
-    
-     #asignamos al objeto pin un registro que corresponde a pin_id que estamos evaluando, en la url
-  @blog =Blog.find(params[:blog_id])
+
+  #asignamos al objeto pin un registro que corresponde a pin_id que estamos evaluando, en la url
+  @blog =Blog.find_by_slug(params[:blog_id])
   #
   @post = Post.new(post_params)
 

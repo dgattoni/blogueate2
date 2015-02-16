@@ -1,0 +1,32 @@
+<% if user_signed_in? && current_user.id == @blog.user.id %>
+
+<div class="col-md-12" style="opacity:0.9;">
+	
+	
+	<%= form_for([@blog, @post]) do |f| %>
+	
+
+	<div class="form-group">
+		<div class="field">
+			<%= f.text_field :entryTitle, class: 'form-control' %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="field">
+			
+			
+			<%= f.text_area :entryContent, :cols => "10", :rows => "10", class: 'form-control' %>
+
+			
+		</div>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit class: "btn btn-success" %>
+	</div>
+	<% end %> 
+
+</div><!-- .col-md-5 -->
+
+<% end %>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blogueate laout blogindex</title> 
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	
+	<%= csrf_meta_tags %>
+
+	<style>
+		
+		
+		
+	</style>
+	
+</head>
+<body>
+	<!-- formato de layout tipo blog 2 -->
+	<%= render 'layouts/bloglayout/navbar' %>
+
+	
+	<div class="row" style="margin-top:50px;">
+
+		<div class="col-md-5 site-header" style="background:url(<%= @blog.siteHeader %>) repeat;  background-size: cover;">
+			
+			
+			<%= render 'layouts/bloglayout/userinfo' %>
+
+			<%= render 'layouts/bloglayout/formwriter' %>
+
+		</div>
+
+		<div class="col-md-6 content-area"> 
+
+			<%= render 'layouts/bloglayout/allposts' %>	
+
+		</div>
+	</div>
+	
+	
+
+	
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

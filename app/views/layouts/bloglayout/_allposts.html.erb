@@ -1,0 +1,36 @@
+<% if @posts.blank?  %>
+<br>
+<h2><%= @post.blog.user.username %> no se siente inspirada aún para escribir artículos...OK?</h2>
+
+<%= image_tag("hum3.gif", class:'img-responsive') %>
+
+
+<% else  %>
+
+<% @posts.each do |post| %>
+<div class="block-post">
+	<h3><strong><%= post.entryTitle %></strong></h3>
+
+	<blockquote class="">
+
+		<p><%= truncate(post.entryContent, length: 140) %></p>
+		<footer>escrito por <cite title="Source Title"><%= post.blog.user.username %>,  
+			<%= time_ago_in_words(post.created_at)  %>
+		</cite></footer>
+	</blockquote>
+	
+	<!-- quier el username del usuario del blog del post. -->
+	
+	<%= link_to 'Leer más...', [@blog, post], class: 'text-info lead' %>
+	
+	
+	
+	<!--  <p>  post.blog.id </p> -->
+	
+</div>
+
+
+<% end %>
+
+
+<% end %>

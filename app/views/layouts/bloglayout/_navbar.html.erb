@@ -1,28 +1,28 @@
   
 
-     <nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+<nav class="navbar navbar-fixed-top navbar-inverse" >
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-          <% if user_signed_in? %>
-          <a class="navbar-brand" href="<%= myblogs_path %>">Volver a mis Blogs</a>
-          <% else %>
-          <a class="navbar-brand" href="<%= root_path %>">Ver mas Blogs</a>
-          <% end  %>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="<%= blog_path %>">Home</a></li>
- 
+      <% if user_signed_in? %>
+      <a class="navbar-brand" href="<%= myblogs_path %>">Volver a mis Blogs</a>
+      <% else %>
+      <a class="navbar-brand" href="<%= root_path %>">Ver mas Blogs</a>
+      <% end  %>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<%= blog_path %>">Home</a></li>
+        
 
-            <li><a href="<%=  contactme_path %>">Contact <%= @blog.user.username  %></a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+        <li><a href="<%=  contactme_path %>">Contact <%= @blog.user.username  %></a></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->

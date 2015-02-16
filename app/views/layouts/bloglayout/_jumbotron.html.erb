@@ -1,16 +1,38 @@
  <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron" style="background:url(<%= @blog.siteHeader %>) repeat;">
-      <div class="container">
-        <h1><%=  @blog.siteTitle %>
-       
+ <div class="jumbotron" style="background:url(<%= @blog.siteHeader %>) repeat;">
+  <div class="container">
 
-        </h1>
-     <br>
-        <p class="siteDescription"> <%=  @blog.siteDescription %></p>
-        <p>
+    <div class="row">
+      
+      <div class="col-md-2">
+        <p> &nbsp;</p>
+        
+         <%= image_tag("danigatt.jpeg", class:'img-circle img-thumbnail text-center img-responsive', width: '150px', height:'150px') %> 
+
+         <br><br>
+ <p class="text-center">  <%= tweet_button(:via => "danigattoni_", :text => "Check this out! #blogueate", :count =>'horizontal') %></p>
 
  
-        <a class="btn btn-primary btn-lg" href="<%=  contactme_path %>" > <%= @blog.user.username %>&raquo;</a></p>
+
+
       </div>
-    </div>
+
+
+      <div class="col-md-8">
+       <p> &nbsp;</p>
+       <h1><%=  @blog.siteTitle %>  </h1>
+       <p class="siteDescription">  <%=  @blog.siteDescription %></p>        
+       
+       <p> &nbsp;</p>
+     </div>
+
+   </div>
+   
+
+       <!--  <a class="btn btn-primary btn-lg" href="<%=  contactme_path %>" >  @blog.user.username  &raquo;</a></p>
+     -->
+
+
+   </div>
+ </div>
 

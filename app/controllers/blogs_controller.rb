@@ -6,8 +6,9 @@ class BlogsController < ApplicationController
  # metodo para mostrar MIS PINS. (LOS PINS DE UN USUARIO LOGUEADO.)
 
  def contactme
-  @blog = Blog.find(params[:id])
-  render layout: "bloglayout/blogindex"
+  @blog = Blog.find_by_slug(params[:id])
+   render layout: "bloglayout/blogcontact"
+
 
 
  end
@@ -27,19 +28,24 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show     
-  #@post = Post.new
-  #carga de vars antes del render
-  #@blog_id = params[:id]
-  #@blog =Blog.find(@blog_id)
-  # @posts =@blog.posts
-
+   
     #aqui cargamos un objeto post
+
+    #PREGUNTAR POR EL BLOG: ETC...que significa.
     @post = Post.new blog: @blog
     @posts = @blog.posts.sorted
 
-    #@toys = Toy.sorted
-     render layout: "bloglayout/blogindex"
+    if @blog.designLayout == 1
+
+      #layout(template_name, conditions = {}, auto = false) public
+      #http://apidock.com/rails/ActionController/Layout/ClassMethods/layout
+      render layout: "bloglayout/blogindex"
+      
+     else
+      render layout: "bloglayout/blogindex2"
      
+     end
+
   end
 
   # GET /blogs/new
@@ -55,7 +61,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_slug(params[:id])
     @categories = Category.all
 
   end
@@ -67,7 +73,7 @@ class BlogsController < ApplicationController
 
     #aqui agregamos el id del usuario logueado y lo asociamos al nuevo blog creado
     @blog.user_id   =   current_user.id
- 
+
     respond_to do |format|
       if @blog.save
         format.html { redirect_to root_path, notice: 'Blog was successfully created.' }
@@ -98,7 +104,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+      format.html { redirect_to myblogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -106,12 +112,15 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-       @blog = Blog.find(params[:id])
+       #@blog = Blog.find(params[:id])
+        @blog = Blog.find_by_slug(params[:id])
+
+        
        
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:siteTitle, :siteDescription, :siteHeader, :user_id, :category_id)
+      params.require(:blog).permit(:siteTitle, :siteDescription, :siteHeader, :user_id, :category_id, :designLayout)
     end
 end

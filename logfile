@@ -21,3 +21,45 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 ERROR:  cached plan must not change result type
 STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."slug" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."slug" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."slug" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT 1
+FATAL:  role "postgres" does not exist
+FATAL:  database "daniprueba" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2015-02-15 11:03:35 CLST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 443) running in data directory "/usr/local/var/postgres"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 443) running in data directory "/usr/local/var/postgres"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 443) running in data directory "/usr/local/var/postgres"?
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2015-02-15 16:54:11 CLST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
